@@ -1,6 +1,9 @@
-# marvelwatch
+# Marvel Watch
 
-A new Flutter project.
+A Flutter Project for the User Interface of a Movie Streaming Service to watch all Movies
+and TV Shows created by Marvel. 
+The App contains a Home Page, a Search Page, an Account Page and an All Shows Page which has 
+all the Movies and TV Shows.
 
 ## Getting Started
 
