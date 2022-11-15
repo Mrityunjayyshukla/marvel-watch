@@ -9,6 +9,10 @@ The App contains <br>
   3. An Account Page and <br>
   4. An All SHows Page which has all the Movies and TV Shows<br>
 
+<p>
+All the Rights for the Images used in the UI are reserved for Marvel..
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
