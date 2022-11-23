@@ -40,7 +40,7 @@ class _MainPageState extends State<MainPage> {
       options: [
         Row(
           children: [
-            const Text("Account"),
+            const Text("Settings"),
             IconButton(
                 onPressed: () => Navigator.push(
                     context,
