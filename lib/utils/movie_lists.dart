@@ -1,5 +1,15 @@
 // ignore_for_file: non_constant_identifier_names
 
+class MovieModel {
+  String movie_name;
+  String movie_poster;
+  double movie_rating;
+  int movie_year;
+
+  MovieModel(
+      this.movie_name, this.movie_poster, this.movie_rating, this.movie_year);
+}
+
 final recommendedForYou = [
   "assets/DefendersSaga/daredevil.png",
   "assets/Legacy/XMenApocalypse.png",
@@ -161,16 +171,6 @@ final urlTitles = [
   "assets/PostersAndTitles/Thor3Title.png",
   "assets/PostersAndTitles/CaptainAmerica2title.png"
 ];
-
-class MovieModel {
-  String movie_name;
-  String movie_poster;
-  double movie_rating;
-  int movie_year;
-
-  MovieModel(
-      this.movie_name, this.movie_poster, this.movie_rating, this.movie_year);
-}
 
 List<MovieModel> recommendedInSearch = [
   MovieModel("Iron Man", "assets/Phase1/IronMan.png", 7.9, 2008),

@@ -32,15 +32,16 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
+    // Custom Action FLoating Button Widget
     return CustomFloatingActionButton(
       body: const Scaffold(
         backgroundColor: Colors.black,
         body: HomePage(),
       ),
       options: [
-        Row(
+        Column(
           children: [
-            const Text("Account"),
+            // const Text("Account"),
             IconButton(
                 onPressed: () => Navigator.push(
                     context,
@@ -52,9 +53,9 @@ class _MainPageState extends State<MainPage> {
                 )),
           ],
         ),
-        Row(
+        Column(
           children: [
-            const Text("Search"),
+            // const Text("Search"),
             IconButton(
                 onPressed: () =>
                     showSearch(context: context, delegate: DataSearch()),
@@ -64,9 +65,9 @@ class _MainPageState extends State<MainPage> {
                 )),
           ],
         ),
-        Row(
+        Column(
           children: [
-            const Text("Movies And TV Shows"),
+            //const Text("Movies And TV Shows"),
             IconButton(
                 onPressed: () => Navigator.push(
                     context,
