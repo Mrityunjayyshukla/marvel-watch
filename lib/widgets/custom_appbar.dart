@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:marvelwatch/screens/account_page.dart';
 
+// Custom App Bar allows a transition in its Opacity as
+// the user scrolls down the app
 class CustomAppBar extends StatelessWidget {
   final double scrollOffset;
   const CustomAppBar({super.key, required this.scrollOffset});
@@ -17,6 +19,8 @@ class CustomAppBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            // App Bar contains the Marvel Logo and an icon
+            // which are arranged with space between arrangement
             Image.asset(
               "assets/images/MarvelLogo.png",
               height: 75,
@@ -38,39 +42,3 @@ class CustomAppBar extends StatelessWidget {
     );
   }
 }
-
-/*class VerticalIconButton extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final Function onTap;
-  const VerticalIconButton(
-      {super.key,
-      required this.icon,
-      required this.title,
-      required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap(),
-      child: Column(
-        children: [
-          Icon(
-            icon,
-            color: Colors.white,
-          ),
-          const SizedBox(
-            height: 2.0,
-          ),
-          Text(
-            title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}*/

@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:marvelwatch/utils/movie_lists.dart';
 import 'package:marvelwatch/widgets/horizontal_list.dart';
 
+// Movies and Shows shows all the Movies and TV Shows
 class MoviesAndShows extends StatefulWidget {
   const MoviesAndShows({super.key});
 
@@ -21,6 +22,8 @@ class _MoviesAndShowsState extends State<MoviesAndShows> {
           child: Padding(
             padding: const EdgeInsets.all(5.0),
             child: Column(children: [
+              // This shows a banner for Marvel studios along with the Icon and
+              // a back arrow which returns to Home Page
               Stack(
                 children: [
                   Image(

@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:marvelwatch/utils/movie_lists.dart';
 import 'package:marvelwatch/widgets/horizontal_list.dart';
 
+// Account Page
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
 
@@ -16,6 +17,8 @@ class _AccountPageState extends State<AccountPage> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
+        // Account Page has Scrolling
+        // It uses SinglechildScrollview for the scroll effect
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
@@ -23,6 +26,7 @@ class _AccountPageState extends State<AccountPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Arrow Back icon to return back to Home Page
                 IconButton(
                     onPressed: () => Navigator.pop(context),
                     icon: const Icon(Icons.arrow_back)),
@@ -37,12 +41,16 @@ class _AccountPageState extends State<AccountPage> {
                     Center(
                       child: Column(
                         children: const [
+                          // If user sets a profile image, image shows
+                          // At default account icon shows
                           Icon(
                             Icons.account_circle_rounded,
                             color: Colors.white,
                             size: 60,
                           ),
                           Gap(20),
+
+                          // Users Name
                           Text(
                             "Mrityunjay Shukla",
                             style: TextStyle(
@@ -51,6 +59,8 @@ class _AccountPageState extends State<AccountPage> {
                             ),
                           ),
                           Gap(10),
+
+                          // User Email
                           Text(
                             "shuklamrityunjay60@gmail.com",
                             style: TextStyle(
@@ -62,6 +72,9 @@ class _AccountPageState extends State<AccountPage> {
                     const Gap(60),
                   ]),
                 ),
+
+                // This will show the Movies and TV Shows
+                // which are already downloaded
                 const Text(
                   "Downloads",
                   style: TextStyle(
@@ -73,6 +86,9 @@ class _AccountPageState extends State<AccountPage> {
                 const Gap(20),
                 HorizontalScroll(scrolllist: downloads),
                 const Gap(40),
+
+                // This will show the Movies and TV Shows
+                // which are in user's wishlist
                 const Text(
                   "Wishlist",
                   style: TextStyle(
@@ -84,6 +100,8 @@ class _AccountPageState extends State<AccountPage> {
                 const Gap(20),
                 HorizontalScroll(scrolllist: wishlist),
                 const Gap(60),
+
+                // App Settings
                 const Text(
                   "Settings",
                   style: TextStyle(

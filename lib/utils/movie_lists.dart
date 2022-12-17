@@ -1,5 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
+// The class Movie Model has the data items for a movie name,
+// Movie poster, IMDB Rating, and Release Year
 class MovieModel {
   String movie_name;
   String movie_poster;

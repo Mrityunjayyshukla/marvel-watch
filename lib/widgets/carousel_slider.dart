@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:marvelwatch/utils/movie_lists.dart';
 
+// Top SLider is the class that shows carousel slider
+// which shows random movies and Tv shows
 class TopSlider extends StatefulWidget {
   const TopSlider({super.key});
 
@@ -40,6 +42,10 @@ class _TopSliderState extends State<TopSlider> {
                   fit: BoxFit.cover,
                 )),
               ),
+
+              // Black layer with 100% opacity at bottom and
+              // 0% opacity at the top and it lies over the
+              // image carousel.
               Container(
                 height: 600,
                 decoration: const BoxDecoration(
@@ -48,6 +54,9 @@ class _TopSliderState extends State<TopSlider> {
                         begin: Alignment.bottomCenter,
                         end: Alignment.topCenter)),
               ),
+
+              // Title and Buttons (Play, Share and Add to wishlist)
+              // show at top of the Image and Black Layer
               Positioned(
                 bottom: 80,
                 child: Column(
@@ -108,6 +117,7 @@ class _TopSliderState extends State<TopSlider> {
   }
 }
 
+// PlayButton allows to open the page of that particular movie or TV Show
 class _PlayButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

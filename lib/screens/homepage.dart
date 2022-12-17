@@ -5,6 +5,8 @@ import 'package:marvelwatch/widgets/carousel_slider.dart';
 import 'package:marvelwatch/widgets/horizontal_list.dart';
 import '../widgets/custom_appbar.dart';
 
+// Home Page is the page that shows
+// at default when user opens the app
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -13,6 +15,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // Scroll Offset is used for the purpose
+  // of opacity of App Bar
+  // When scroll is at the top, opacity is 0%
+  // While scrolling down, opacity increases till 100%
   late ScrollController _scrollController;
   double _scrollOffset = 0.0;
 
@@ -49,6 +55,8 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Top Slider shows a carousel of randomly
+                  // showing movies and TV Shows
                   const TopSlider(),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -61,6 +69,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   const Gap(25),
+
+                  // Recommended TV Shows and Movies
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
@@ -148,9 +158,12 @@ class _HomePageState extends State<HomePage> {
 }
 
 // Search Page
-
+// Search Page uses a Delegate which contains 4 functions
+// buildActions, buildLeading, buildResults, buildSuggestions
 class DataSearch extends SearchDelegate {
   List<MovieModel> suggestionList = List.from(allShowsList);
+
+  // This Function defines the layout of the Interface of the Search Page
   @override
   ThemeData appBarTheme(BuildContext context) {
     return Theme.of(context).copyWith(
@@ -159,9 +172,10 @@ class DataSearch extends SearchDelegate {
     );
   }
 
+  // buildActions functions shows the action shown
+  // when clear icon is clicked.
   @override
   List<Widget>? buildActions(BuildContext context) {
-    // actions for app bar
     return [
       IconButton(
           onPressed: () {
@@ -171,6 +185,8 @@ class DataSearch extends SearchDelegate {
     ];
   }
 
+  // buildLeading functions initializes the icon to
+  // left of search panel. When clicked, it sets to homepage.
   @override
   Widget? buildLeading(BuildContext context) {
     // leading icon on the left of the app bar
@@ -184,6 +200,8 @@ class DataSearch extends SearchDelegate {
         ));
   }
 
+  // buildResults function shows the result when the search
+  // result is clicked.
   @override
   Widget buildResults(BuildContext context) {
     // show some results based on the selection
@@ -192,9 +210,14 @@ class DataSearch extends SearchDelegate {
     );
   }
 
+  // buildSuggestions shows the result when some text is
+  // typed in the search panel. The search result is based
+  // on what is searched on the search panel
   @override
   Widget buildSuggestions(BuildContext context) {
-    // show when someone searches for something
+    // show when someone searches for something.
+    // The Search result shows Movie Name, Movie Poster,
+    // Movie Release Year and IMDB rating
     final suggestionList = query.isEmpty
         ? recommendedInSearch
         : allShowsList
