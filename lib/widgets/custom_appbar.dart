@@ -1,6 +1,7 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, depend_on_referenced_packages
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:marvelwatch/screens/account_page.dart';
 
 // Custom App Bar allows a transition in its Opacity as
@@ -19,12 +20,11 @@ class CustomAppBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // App Bar contains the Marvel Logo and an icon
-            // which are arranged with space between arrangement
-            Image.asset(
-              "assets/images/MarvelLogo.png",
-              height: 75,
-              fit: BoxFit.cover,
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16),
+              child: Text("CAMIXA",
+                  style: GoogleFonts.sedgwickAveDisplay(fontSize: 32)),
             ),
             IconButton(
                 onPressed: () => Navigator.push(

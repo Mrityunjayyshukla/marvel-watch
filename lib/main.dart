@@ -2,6 +2,7 @@ import 'package:custom_floating_action_button/custom_floating_action_button.dart
 import 'package:flutter/material.dart';
 import 'package:marvelwatch/screens/account_page.dart';
 import 'package:marvelwatch/screens/homepage.dart';
+import 'package:marvelwatch/screens/login_signup.dart';
 import 'package:marvelwatch/screens/movies_and_shows.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MarvelWatch extends StatelessWidget {
       title: "Marvel-Watch",
       theme: ThemeData(brightness: Brightness.dark),
       debugShowCheckedModeBanner: false,
-      home: const MainPage(),
+      home: const WelcomePage(),
     );
   }
 }
@@ -39,9 +40,12 @@ class _MainPageState extends State<MainPage> {
         body: HomePage(),
       ),
       options: [
-        Column(
+        Row(
           children: [
-            // const Text("Account"),
+            const Text(
+              "Account",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             IconButton(
                 onPressed: () => Navigator.push(
                     context,
@@ -53,21 +57,12 @@ class _MainPageState extends State<MainPage> {
                 )),
           ],
         ),
-        Column(
+        Row(
           children: [
-            // const Text("Search"),
-            IconButton(
-                onPressed: () =>
-                    showSearch(context: context, delegate: DataSearch()),
-                icon: const Icon(
-                  Icons.search,
-                  size: 28,
-                )),
-          ],
-        ),
-        Column(
-          children: [
-            //const Text("Movies And TV Shows"),
+            const Text(
+              "Movies And TV Shows",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             IconButton(
                 onPressed: () => Navigator.push(
                     context,
@@ -75,6 +70,23 @@ class _MainPageState extends State<MainPage> {
                         builder: (context) => const MoviesAndShows())),
                 icon: const Icon(
                   Icons.movie,
+                  size: 28,
+                )),
+          ],
+        ),
+        Row(
+          children: [
+            const Text(
+              "Search",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            IconButton(
+                onPressed: () =>
+                    showSearch(context: context, delegate: DataSearch()),
+                icon: const Icon(
+                  Icons.search,
                   size: 28,
                 )),
           ],

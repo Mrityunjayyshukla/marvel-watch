@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:marvelwatch/utils/movie_lists.dart';
 import 'package:marvelwatch/widgets/horizontal_list.dart';
 
@@ -32,10 +33,11 @@ class _AccountPageState extends State<AccountPage> {
                     icon: const Icon(Icons.arrow_back)),
                 Center(
                   child: Column(children: [
-                    const Image(
-                      image: AssetImage("assets/images/MarvelLogo.png"),
-                      width: 250,
-                      height: 136.48,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8.0, vertical: 16),
+                      child: Text("CAMIXA",
+                          style: GoogleFonts.sedgwickAveDisplay(fontSize: 50)),
                     ),
                     const Gap(40),
                     Center(
@@ -198,12 +200,17 @@ class _AccountPageState extends State<AccountPage> {
                   ),
                 ),
                 const Gap(20),
-                const Text(
-                  "Log Out",
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).popUntil((route) => route.isFirst);
+                  },
+                  child: const Text(
+                    "Log Out",
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ],

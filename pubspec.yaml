@@ -43,6 +43,7 @@ dependencies:
   search_page: ^2.2.0
   dot_navigation_bar: ^1.0.1+4
   custom_floating_action_button: ^0.0.3
+  google_fonts: ^4.0.3
   
 
 
