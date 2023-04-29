@@ -205,9 +205,7 @@ class DataSearch extends SearchDelegate {
   @override
   Widget buildResults(BuildContext context) {
     // show some results based on the selection
-    return const Center(
-      child: Text("Marvel Studios"),
-    );
+    return Container();
   }
 
   // buildSuggestions shows the result when some text is
